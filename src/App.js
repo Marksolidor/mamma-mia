@@ -1,12 +1,22 @@
+import { Routes, Route } from "react-router-dom";
+import {Home} from "./views/Home";
+import {Pizza} from "./views/Pizza";
+import {Cart} from "./views/Cart";
+import Navbar from "./components/Navbar";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <container>
-<h1>Hi</h1>
-</container>
-    </div>
+<>
+      <Navbar/>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pizza/:id" element={<Pizza />} />
+          <Route path="/carrito" element={<Cart />} />
+        </Routes>
+
+</>
+
   );
 }
 
-export default App;
