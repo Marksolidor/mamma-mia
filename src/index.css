@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+li{
+  list-style:none;
+}
+
 .cart {
   width: "3rem"; 
   height: "3rem"; 

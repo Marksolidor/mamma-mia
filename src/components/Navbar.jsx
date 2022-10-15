@@ -5,7 +5,7 @@ export default function Navbar () {
         <>
         <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm mb-3">
             <NavLink end to="/">
-                Pizzeria Mamma Mia
+            🍕 Pizzeria Mamma Mia
             </NavLink>
             <button style={{ width: "3rem", height: "3rem", position: "relative" }}
             variant="outline-primary"
