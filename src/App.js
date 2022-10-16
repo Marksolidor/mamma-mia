@@ -1,22 +1,27 @@
-import { Routes, Route } from "react-router-dom";
-import {Home} from "./views/Home";
-import {Pizza} from "./views/Pizza";
-import {Cart} from "./views/Cart";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ProductProvider from './context/InfoProvider'
+import Navbar from './components/Navbar'
+import Home from './views/Home'
+import Pizza from "./views/Pizza";
+import Cart from "./views/Cart";
 
-export default function App() {
+
+function App() {
   return (
-<>
-      <Navbar/>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
+    <div className="App">
+      <ProductProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+ <Route path="/" element={<Home />} />
           <Route path="/pizza/:id" element={<Pizza />} />
           <Route path="/carrito" element={<Cart />} />
-        </Routes>
-
-</>
-
-  );
+          </Routes>
+        </BrowserRouter>
+      </ProductProvider>
+    </div>
+  )
 }
+
+export default App
 
