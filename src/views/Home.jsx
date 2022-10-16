@@ -5,8 +5,21 @@ import { ProductsContext } from "../context/InfoProvider";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { products } = React.useContext(ProductsContext);
+  const { products, detail, setDetail } = React.useContext(ProductsContext);
   const navigate = useNavigate();
+
+  const addCart = (element) =>{
+  setDetail([
+    ...detail,
+    {
+      idProduct: element.id,
+      name: element.name,
+      amount: 1,
+      price: element.price,
+      img: element.img,
+    },
+  ]);
+}
 
 
   return (
@@ -34,12 +47,11 @@ const Home = () => {
               </div>
               <div className="buttons">
                 <button type="button" class="btn btn-primary"
-                //onChange={(event) => goPizza(event.target.value)}
                 onClick={() => navigate(`/pizza/${item.id}`)}
                 >
                   Ver más
                 </button>
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success" onClick={() => addCart(item)}> 
                   🛒 Agregar
                 </button>
               </div>

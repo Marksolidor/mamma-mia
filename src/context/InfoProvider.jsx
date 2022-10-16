@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 export const ProductsContext = React.createContext()
 const InfoProvider = (props) => {
   const [products, setProducts] = useState([])
+  const [detail, setDetail] = useState([]);
 
   useEffect(() => {
     jsonData()
@@ -21,7 +22,7 @@ const InfoProvider = (props) => {
 
   return (
     <ProductsContext.Provider
-      value={{ products, setProducts }}
+      value={{ products, setProducts, detail, setDetail }}
     >
       {props.children}
     </ProductsContext.Provider>
