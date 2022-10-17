@@ -5,6 +5,20 @@ import { ProductsContext } from "../context/InfoProvider";
 const Cart = () => {
   const { detail, setDetail } = useContext(ProductsContext);
 
+  const amountSet = (ac, id, am) => {
+    setDetail((current) =>
+      current.map((obj) => {
+        if (obj.idProduct === id) {
+          if (ac === "add") {
+            return { ...obj, amount: am * 1 + 1 };
+          } else if (ac === "rest" && am > 1) {
+            return { ...obj, amount: am * 1 - 1 };
+          }
+        }
+        return obj;
+      })
+    );
+  };
 
   return (
     <div className="cart-container">
@@ -21,11 +35,15 @@ const Cart = () => {
             </div>
             <div className="amount-container">
               <label>${p.price}</label>
-              <Button>
+              <Button className="btn-danger"
+              onClick={() => amountSet("rest", p.idProduct, p.amount)}
+              >
                 -
               </Button>
-              <label> 1 </label>
-              <Button>
+              <label> {p.amount} </label>
+              <Button className="btn-success"
+              onClick={() => amountSet("add", p.idProduct, p.amount)}
+              >
                 +
               </Button>
             </div>
@@ -33,7 +51,10 @@ const Cart = () => {
         ))}
         <div>
           <h3 className="resultcart">
-            Total Pedido $
+            Total Pedido $ {detail
+              .map((item) => item.price * item.amount)
+              .reduce((prev, curr) => prev + curr, 0)
+              .toLocaleString("de-DE")}
           </h3>
           <Button>Ir a Pagar</Button>
         </div>

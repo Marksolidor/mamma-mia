@@ -20,7 +20,19 @@ const Home = () => {
     },
   ]);
 }
-
+const isPizzaInCart = cartItems.find((item) => item.id === pizza.id);
+        if (isPizzaInCart) {
+            setCartItems(
+                cartItems.map((item) =>
+                    item.id === pizza.id
+                        ? { ...isPizzaInCart, quantity: isPizzaInCart.quantity + 1 }
+                        : item
+                )
+            );
+        } else {
+            setCartItems([...cartItems, { ...pizza, quantity: 1 }]);
+        }
+console.log(detail)
 
   return (
     <>
