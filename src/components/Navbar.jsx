@@ -1,18 +1,21 @@
 import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar () {
+  const navigate = useNavigate();
     return (
         <>
         <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
             <Container>
-            <Nav className="me-auto">
+            <Nav>
             <Nav.Link end to="/" as={NavLink}>
             🍕 Pizzeria Mamma Mia
             </Nav.Link>
             <Button style={{ width: "3rem", height: "3rem", position: "relative" }}
             variant="outline-primary"
             className="rounded-circle"
+            onClick={() => navigate(`/carrito`)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

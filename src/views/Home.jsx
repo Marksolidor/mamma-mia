@@ -1,13 +1,38 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ProductsContext } from "../context/InfoProvider";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { products } = React.useContext(ProductsContext);
+  const { products, detail, setDetail } = React.useContext(ProductsContext);
   const navigate = useNavigate();
 
+  const addCart = (element) =>{
+  setDetail([
+    ...detail,
+    {
+      idProduct: element.id,
+      name: element.name,
+      amount: 1,
+      price: element.price,
+      img: element.img,
+    },
+  ]);
+}
+const isPizzaInCart = cartItems.find((item) => item.id === pizza.id);
+        if (isPizzaInCart) {
+            setCartItems(
+                cartItems.map((item) =>
+                    item.id === pizza.id
+                        ? { ...isPizzaInCart, quantity: isPizzaInCart.quantity + 1 }
+                        : item
+                )
+            );
+        } else {
+            setCartItems([...cartItems, { ...pizza, quantity: 1 }]);
+        }
+console.log(detail)
 
   return (
     <>
@@ -17,10 +42,17 @@ const Home = () => {
           <Col key={item.id}>
             <div className="card-container">
               <div>
-                <img className="img-fluid" alt={item.name} src={item.img}></img>
+                <img className="img-fluid mb-3" alt={item.name} src={item.img}></img>
               </div>
               <div>
+                <div className="display-info-container">
                 <h2>{item.name} </h2>
+                <Button type="button" className="btn btn-primary"
+                onClick={() => navigate(`/pizza/${item.id}`)}
+                >
+                  Ver más
+                </Button>
+                </div>
                 <hr></hr>
                 <h4>Ingredientes</h4>
                 <ul>
@@ -33,15 +65,9 @@ const Home = () => {
                 <span>{item.price}</span>
               </div>
               <div className="buttons">
-                <button type="button" class="btn btn-primary"
-                //onChange={(event) => goPizza(event.target.value)}
-                onClick={() => navigate(`/pizza/${item.id}`)}
-                >
-                  Ver más
-                </button>
-                <button type="button" class="btn btn-success">
+                <Button type="button" className="btn btn-success w-100" onClick={() => addCart(item)}> 
                   🛒 Agregar
-                </button>
+                </Button>
               </div>
             </div>
           </Col>

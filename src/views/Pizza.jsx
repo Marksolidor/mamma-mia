@@ -10,7 +10,7 @@ const Pizza = () => {
       <div className="product-container">
           {products.filter((a) => a.id === id)
             .map((item) => (
-              <div className="img-container">
+              <div className="img-container" key={item.id}>
                 <img className="img-fluid" src={item.img} alt={item.name} />
                 <div className="info-container">
                   <div className="name-container">
