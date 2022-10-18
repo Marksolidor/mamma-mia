@@ -13,7 +13,12 @@ code {
 }
 
 .g-3{
-  padding: 0 2em 0 2em;
+  padding: 0 2em 1em 2em;
+}
+
+.price{
+  font-weight: bolder;
+  font-size: 1.2em;
 }
 
 li{
@@ -58,6 +63,7 @@ li{
 .order-container{
   display: flex;
   justify-content: space-between;
+  text-align: center;
   align-items: baseline;
   padding-right: 0.5em;
   margin-bottom: 1.5em;
@@ -68,4 +74,14 @@ li{
 
 .order-img{
   width: 10em;;
+}
+
+.amount-container{
+  align-items: baseline;
+  padding: 1em 0 0.5em 0;
+}
+
+.total{
+  display: flex;
+  flex-direction: column;
 }

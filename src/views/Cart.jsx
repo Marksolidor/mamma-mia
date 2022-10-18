@@ -33,14 +33,14 @@ const Cart = () => {
             <img className="order-img" src={p.img} alt={p.img} />
               <label classname="name"> {p.name}</label>
             </div>
-            <div className="amount-container">
+            <div className="amount-container d-flex">
               <label>${p.price}</label>
               <Button className="btn-danger"
               onClick={() => amountSet("rest", p.idProduct, p.amount)}
               >
                 -
               </Button>
-              <label> {p.amount} </label>
+              <label className="m-1"> {p.amount} </label>
               <Button className="btn-success"
               onClick={() => amountSet("add", p.idProduct, p.amount)}
               >
@@ -49,14 +49,17 @@ const Cart = () => {
             </div>
           </div>
         ))}
-        <div>
-          <h3 className="resultcart">
+        <div className="total">
+          <h3 className="resultcart text-end">
             Total Pedido $ {detail
               .map((item) => item.price * item.amount)
               .reduce((prev, curr) => prev + curr, 0)
               .toLocaleString("de-DE")}
           </h3>
-          <Button>Ir a Pagar</Button>
+          <Button className="btn btn-success">Ir a Pagar</Button>
+        </div>
+        <div className="buttons d-flex mt-2">
+          <Button className="btn btn-primary">Seguir Comprando</Button>
         </div>
       </div>
     </div>

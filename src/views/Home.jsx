@@ -41,7 +41,7 @@ console.log(detail)
                 </ul>
               </div>
               <div>
-                <span>{item.price}</span>
+                <p className="text-end price">${item.price}</p>
               </div>
               <div className="buttons">
                 <Button type="button" className="btn btn-success w-100" onClick={() => addCart(item)}> 
