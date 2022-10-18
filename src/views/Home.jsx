@@ -2,36 +2,15 @@ import React from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ProductsContext } from "../context/InfoProvider";
+import { cartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { products, detail, setDetail } = React.useContext(ProductsContext);
+  const { products, detail } = React.useContext(ProductsContext);
+  const { addCart } = React.useContext(cartContext);
   const navigate = useNavigate();
 
-  const addCart = (element) =>{
-  setDetail([
-    ...detail,
-    {
-      idProduct: element.id,
-      name: element.name,
-      amount: 1,
-      price: element.price,
-      img: element.img,
-    },
-  ]);
-}
-const isPizzaInCart = cartItems.find((item) => item.id === pizza.id);
-        if (isPizzaInCart) {
-            setCartItems(
-                cartItems.map((item) =>
-                    item.id === pizza.id
-                        ? { ...isPizzaInCart, quantity: isPizzaInCart.quantity + 1 }
-                        : item
-                )
-            );
-        } else {
-            setCartItems([...cartItems, { ...pizza, quantity: 1 }]);
-        }
+
 console.log(detail)
 
   return (
