@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap"
 import { ProductsContext } from "../context/InfoProvider";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { detail, setDetail } = useContext(ProductsContext);
@@ -59,7 +60,11 @@ const Cart = () => {
           <Button className="btn btn-success">Ir a Pagar</Button>
         </div>
         <div className="buttons d-flex mt-2">
-          <Button className="btn btn-primary">Seguir Comprando</Button>
+        <Link to="/">
+                  <Button type="button" className="btn btn-primary w-100 mt-2">
+                    Seguir Comprando
+                  </Button>
+                  </Link>
         </div>
       </div>
     </div>
