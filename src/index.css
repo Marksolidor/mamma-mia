@@ -36,7 +36,19 @@ li{
 }
 
 .product-container{
-  padding: 0 3em 0 3em;
+  padding: 0 3em 2em 3em;
+}
+
+.info-container{
+  width: 50%;
+}
+
+.img-container{
+  width: 50% ;
+}
+
+.price-container{
+  flex-wrap: wrap;
 }
 
 .cart-container{
