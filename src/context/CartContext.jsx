@@ -31,21 +31,10 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const removeCart = (element) => {
-    setDetail(detail.filter((item) => item.idProduct !== element.idProduct));
-  };
-
-  const clearCart = () => {
-    setDetail([]);
-  };
-
-
   return (
     <cartContext.Provider
       value={{
-        addCart,
-        removeCart,
-        clearCart,
+        addCart
       }}
     >
       {children}
