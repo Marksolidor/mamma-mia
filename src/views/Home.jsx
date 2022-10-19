@@ -6,12 +6,9 @@ import { cartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { products, detail } = React.useContext(ProductsContext);
+  const { products } = React.useContext(ProductsContext);
   const { addCart } = React.useContext(cartContext);
   const navigate = useNavigate();
-
-
-console.log(detail)
 
   return (
     <>

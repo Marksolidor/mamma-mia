@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.nav-total{
+  display: flex;
+  text-align: center;
+  align-items: baseline;
+}
+
 .g-3{
   padding: 0 2em 1em 2em;
 }
