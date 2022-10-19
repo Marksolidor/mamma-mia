@@ -12,7 +12,10 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <div className="bg-hero text-center mb-3 text-light bg-dark">
+        <h1 className="text-hero">Pizzería Mamma Mia!</h1>
+        <h6 className="text-hero">¡Tenemos las mejores pizzas que podrás encontrar!</h6>
+        </div>
       <Row md={2} xs={1} lg={3} className="g-3">
         {products.map((item) => (
           <Col key={item.id}>

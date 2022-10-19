@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ECDBBA !important
 }
 
 code {
@@ -12,7 +13,31 @@ code {
     monospace;
 }
 
+.bg-hero{
+  background-image: url(https://as1.ftcdn.net/v2/jpg/02/34/63/04/1000_F_234630430_48KZrdOyuUeGj9PrjWUVXZHzAfbLn3Ti.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  width: 100%;
+}
 
+.nav-price{
+  color: whitesmoke
+}
+
+.text-hero{
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+img{
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.25);
+}
+
+button{
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.25);
+}
 
 .nav-total{
   display: flex;

@@ -9,15 +9,15 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
+    <NavbarBs sticky="top" className="navbar-dark bg-dark shadow-sm">
       <Container>
         <Nav className="me-auto">
           <Nav.Link to="/" as={NavLink}>
-          🍕 Pizzeria Mamma Mia
+          <h5>🍕 Pizzeria Mamma Mia</h5>
           </Nav.Link>
         </Nav>
         <div className="nav-total">
-        <p className="m-1">Total: ${detail
+        <p className="nav-price m-1">Total: ${detail
             .map((item) => item.price * item.amount)
             .reduce((prev, curr) => prev + curr, 0)
             .toLocaleString("de-DE")}</p>

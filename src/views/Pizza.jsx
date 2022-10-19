@@ -14,14 +14,15 @@ const Pizza = () => {
       <div className="product-container">
           {products.filter((a) => a.id === id)
             .map((item) => (
-              <div className="pizza-container d-flex row row-cols-1 row-cols-md-2 g-4" key={item.id}>
+              <div key={item.id}>
+                                                  <h2 className="text-center">{item.name} </h2>
+                    <hr></hr>
+              <div className="pizza-container d-flex row row-cols-1 row-cols-md-2 g-4">
                 <div className="img-container col">
                 <img className="img-fluid pizza-detail" src={item.img} alt={item.name} />
                 </div>
                 <div className="info-container col">
                   <div className="name-container">
-                  <h2 className="text-center">{item.name} </h2>
-                    <hr></hr>
                   </div>
                   <div className="desc-container">
                     <p>{item.desc}</p>
@@ -48,6 +49,7 @@ const Pizza = () => {
                   </Link>
                 </div>
                 </div>
+              </div>
               </div>
             ))}
       </div>
