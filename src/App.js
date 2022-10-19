@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Home from './views/Home'
 import Pizza from "./views/Pizza";
 import Cart from "./views/Cart";
+import NotFound from './views/NotFound'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pizza/:id" element={<Pizza />} />
           <Route path="/carrito" element={<Cart />} />
+          <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
         </CartProvider>
