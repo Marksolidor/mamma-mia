@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+
 export const ProductsContext = React.createContext()
+
 const InfoProvider = (props) => {
   const [products, setProducts] = useState([])
   const [detail, setDetail] = useState([]);
@@ -18,7 +20,11 @@ const InfoProvider = (props) => {
     } catch (e) {
       alert('Mensaje del Servidor: No se pudo establecer la conexión')
     }
-  }
+  };
+
+ 
+
+
 
   return (
     <ProductsContext.Provider

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ECDBBA !important
 }
 
 code {
@@ -12,8 +13,45 @@ code {
     monospace;
 }
 
+.bg-hero{
+  background-image: url(https://as1.ftcdn.net/v2/jpg/02/34/63/04/1000_F_234630430_48KZrdOyuUeGj9PrjWUVXZHzAfbLn3Ti.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  width: 100%;
+}
+
+.nav-price{
+  color: whitesmoke
+}
+
+.text-hero{
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+img{
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.25);
+}
+
+button{
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.25);
+}
+
+.nav-total{
+  display: flex;
+  text-align: center;
+  align-items: baseline;
+}
+
 .g-3{
-  padding: 0 2em 0 2em;
+  padding: 0 2em 1em 2em;
+}
+
+.price{
+  font-weight: bolder;
+  font-size: 1.2em;
 }
 
 li{
@@ -36,7 +74,19 @@ li{
 }
 
 .product-container{
-  padding: 0 3em 0 3em;
+  padding: 0 3em 2em 3em;
+}
+
+.info-container{
+  width: 50%;
+}
+
+.img-container{
+  width: 50% ;
+}
+
+.price-container{
+  flex-wrap: wrap;
 }
 
 .cart-container{
@@ -46,6 +96,7 @@ li{
 .order-container{
   display: flex;
   justify-content: space-between;
+  text-align: center;
   align-items: baseline;
   padding-right: 0.5em;
   margin-bottom: 1.5em;
@@ -56,4 +107,14 @@ li{
 
 .order-img{
   width: 10em;;
+}
+
+.amount-container{
+  align-items: baseline;
+  padding: 1em 0 0.5em 0;
+}
+
+.total{
+  display: flex;
+  flex-direction: column;
 }
